@@ -1,0 +1,133 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    width: 300px;
+    backdrop-filter: blur(5px);
+}
+
+.neon-text {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+    margin-bottom: 1.5rem;
+}
+
+.neon-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.neon-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #0ff;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #0ff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0ff, inset 0 0 5px #0ff;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, inset 0 0 10px #0ff;
+}
+
+.neon-button {
+    padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ff00ff, inset 0 0 5px #ff00ff;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff00ff;
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    background-color: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, inset 0 0 10px #ff00ff;
+}
+
+.neon-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.success {
+    display: block;
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #0f0;
+    border: 2px solid #0f0;
+    box-shadow: 0 0 5px #0f0, inset 0 0 5px #0f0;
+}
+
+.error {
+    display: block;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #f00;
+    border: 2px solid #f00;
+    box-shadow: 0 0 5px #f00, inset 0 0 5px #f00;
+}
+
+/* Efectos de partículas de fondo */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(0, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100vw);
+        opacity: 0;
+    }
+}

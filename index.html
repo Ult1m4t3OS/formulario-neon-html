@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Neon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="neon-text">Formulario de Contacto</h1>
+        <form id="contactForm" class="neon-form">
+            <div class="form-group">
+                <label for="nombre" class="neon-label">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required 
+                       pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
+                       title="Solo letras y espacios, se permiten tildes y ñ">
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="neon-label">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" required 
+                       pattern="[0-9]{10}" 
+                       title="10 dígitos numéricos" maxlength="10">
+            </div>
+            <button type="submit" class="neon-button">Enviar</button>
+        </form>
+        <div id="message" class="neon-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
