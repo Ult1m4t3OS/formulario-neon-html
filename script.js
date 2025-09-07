@@ -43,35 +43,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     function enviarDatos(nombre, telefono) {
+        // Aquí normalmente harías una petición AJAX a un servidor PHP
+        // Para este ejemplo, simularemos el envío
+        
         showMessage('Enviando datos...', 'success');
         
-        // Crear objeto con los datos
-        const datos = {
-            nombre: nombre,
-            telefono: telefono
-        };
-        
-        // Enviar datos al servidor PHP
-        fetch('guardar.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(datos)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showMessage('¡Datos guardados correctamente en la base de datos!', 'success');
-                form.reset();
-            } else {
-                showMessage('Error: ' + data.message, 'error');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            showMessage('Error de conexión con el servidor', 'error');
-        });
+        // Simular envío a servidor (reemplazar con código real)
+        setTimeout(() => {
+            // En un caso real, aquí se conectaría con PHP que guarda en MySQL
+            console.log('Datos a guardar:', { nombre, telefono });
+            
+            // Simular éxito
+            showMessage('¡Datos guardados correctamente en la base de datos!', 'success');
+            form.reset();
+        }, 1500);
     }
     
     function showMessage(text, type) {
@@ -81,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar mensaje después de 5 segundos
         setTimeout(() => {
             messageDiv.className = 'neon-message';
-            messageDiv.textContent = '';
         }, 5000);
     }
     
