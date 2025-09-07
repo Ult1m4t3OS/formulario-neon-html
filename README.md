@@ -23,4 +23,4 @@ Formulario de contacto con diseño neón y partículas animadas. Valida y almace
 
 1. Clona este repositorio:
 ```bash
-git clone [url-del-repositorio]
+git clone [https://github.com/Ult1m4t3OS/formulario-neon-html.git]
