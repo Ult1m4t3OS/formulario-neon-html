@@ -1,8 +1,5 @@
 <?php
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
 
 // Configuración de la base de datos
 $servername = "localhost";
@@ -20,11 +17,8 @@ if ($conn->connect_error) {
 
 // Recibir y validar datos
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener el contenido JSON del cuerpo de la solicitud
-    $input = json_decode(file_get_contents('php://input'), true);
-    
-    $nombre = trim($input['nombre']);
-    $telefono = trim($input['telefono']);
+    $nombre = trim($_POST['nombre']);
+    $telefono = trim($_POST['telefono']);
     
     // Validar nombre (permite letras, espacios, tildes y ñ)
     if (!preg_match("/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/", $nombre)) {
